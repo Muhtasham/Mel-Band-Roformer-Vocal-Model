@@ -4,9 +4,12 @@ A [Mel-Band-Roformer Vocal model](https://arxiv.org/abs/2310.01809). This model 
 
 Download the model - https://huggingface.co/KimberleyJSN/melbandroformer/blob/main/MelBandRoformer.ckpt
 
-Install requirements - `pip install -r requirements.txt`
+Install requirements - `uv sync`
 
-Inference - `python inference.py --config_path configs/config_vocals_mel_band_roformer.yaml --model_path melbandroformer.ckpt --input_folder songsfolder --store_dir outputsfolder`
+Inference:
+```bash
+uv run inference.py --config_path configs/config_vocals_mel_band_roformer.yaml --model_path melbandroformer.ckpt --input_folder audio --store_dir roformer-out
+```
 
 The model will output a vocals and instrumental file for every .wav file inside the --input_folder and save them to the --store_dir folder.
 
