@@ -1,14 +1,18 @@
+
+# Mel-Band-Roformer-Vocal-Model
+
 A [Mel-Band-Roformer Vocal model](https://arxiv.org/abs/2310.01809). This model performs slightly better than the paper equivalent due to training with more data.
 
 # How to use
 
-Download the model - https://huggingface.co/KimberleyJSN/melbandroformer/blob/main/MelBandRoformer.ckpt
-
 Install requirements - `uv sync`
 
+Set `export HF_HUB_ENABLE_HF_TRANSFER=1` as an environment variable, and download the model - `huggingface-cli download KimberleyJSN/melbandroformer MelBandRoformer.ckpt --local-dir .`
+
 Inference:
+
 ```bash
-uv run inference.py --config_path configs/config_vocals_mel_band_roformer.yaml --model_path melbandroformer.ckpt --input_folder audio --store_dir roformer-out
+uv run inference.py --config_path configs/config_vocals_mel_band_roformer.yaml --model_path MelBandRoformer.ckpt --input_folder audio --store_dir roformer-out
 ```
 
 The model will output a vocals and instrumental file for every .wav file inside the --input_folder and save them to the --store_dir folder.
